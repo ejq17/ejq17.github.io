@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabscribe | EJ Quigley</title>
+<meta name="description" content="Tabscribe is an open source app that turns sheet music, MIDI, and audio into editable guitar tabs, offline, in your browser. See a demo and try it live.">
+<link rel="canonical" href="https://ejq17.github.io/projects/tabscribe/">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Edward Quigley">
+<meta property="og:title" content="Tabscribe | EJ Quigley">
+<meta property="og:description" content="Tabscribe is an open source app that turns sheet music, MIDI, and audio into editable guitar tabs, offline, in your browser. See a demo and try it live.">
+<meta property="og:url" content="https://ejq17.github.io/projects/tabscribe/">
+<meta property="og:image" content="https://ejq17.github.io/assets/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Edward Quigley. Developer, web designer, CTO, student pilot, jazz guitarist, and entrepreneur.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tabscribe | EJ Quigley">
+<meta name="twitter:description" content="Tabscribe is an open source app that turns sheet music, MIDI, and audio into editable guitar tabs, offline, in your browser. See a demo and try it live.">
+<meta name="twitter:image" content="https://ejq17.github.io/assets/images/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;550;650;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/project.css">
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/tabscribe-demo.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-bar">
+    <a class="brand" href="/" aria-label="Edward Quigley, home"><span class="brand-mark" aria-hidden="true">EQ</span>Edward Quigley</a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Menu"><span class="menu-bars" aria-hidden="true"></span>Menu</summary>
+      <nav class="menu-panel" aria-label="Primary mobile">
+        <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+  <section class="page-hero" aria-labelledby="ts-title">
+    <div class="wrap">
+      <a class="back-link rise" href="/#projects"><svg class="icon back-icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-right"/></svg>All projects</a>
+      <p class="eyebrow rise">Open source</p>
+      <h1 id="ts-title" class="rise">Tabscribe</h1>
+      <p class="page-lede rise">Turns sheet music, MIDI, and audio into guitar tabs, offline, in your browser.</p>
+      <div class="hero-actions rise">
+        <a class="btn btn-primary" href="https://ejq17.github.io/tabscribe/" target="_blank" rel="noopener">Open the app<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="btn btn-ghost" href="https://github.com/ejq17/tabscribe" target="_blank" rel="noopener">Source on GitHub<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-github"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="demo" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="demo-title" class="reveal">Notes in, tab out</h2>
+        <p class="section-intro reveal">Each note on the left lands on a string and fret on the right. A scripted demo of the idea. The real app does this from your files.</p>
+      </div>
+      <div class="demo-shell reveal" data-demo>
+        <div class="demo-core">
+          <div class="demo-bar">
+            <div class="demo-readout" aria-hidden="true"><span class="readout-label">Now reading</span><span class="readout-note" data-readout>Ready</span></div>
+            <div class="demo-controls">
+              <button class="demo-btn demo-btn-main" type="button" data-play>Play</button>
+              <button class="demo-btn" type="button" data-speed aria-pressed="false">Slow</button>
+            </div>
+          </div>
+          <div class="demo-grid">
+            <figure class="demo-pane">
+              <figcaption>MIDI in</figcaption>
+              <svg class="demo-svg" data-roll viewBox="0 0 440 240" role="img" aria-label="Piano roll showing twelve notes of a short rising and falling melody"></svg>
+            </figure>
+            <figure class="demo-pane">
+              <figcaption>Tab out</figcaption>
+              <svg class="demo-svg" data-tab viewBox="0 0 440 240" role="img" aria-label="Six-line guitar tab that fills in fret numbers for each note, high e string on top"></svg>
+            </figure>
+          </div>
+          <p class="demo-note">Standard tuning, lowest fret that fits. No audio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section live-section" id="live" aria-labelledby="live-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="live-title" class="reveal">Try it live</h2>
+        <p class="section-intro reveal">The real app, running right here. It works fully in your browser, so your files never leave your device.</p>
+      </div>
+      <div class="device reveal">
+        <div class="device-core">
+          <div class="device-bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="device-url">ejq17.github.io/tabscribe</span></div>
+          <iframe class="device-frame" src="https://ejq17.github.io/tabscribe/" title="Tabscribe app" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="live-fallback card reveal">
+        <p>The app needs room to work, so on a small screen it opens on its own page.</p>
+        <a class="btn btn-primary" href="https://ejq17.github.io/tabscribe/" target="_blank" rel="noopener">Open the app<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reads" aria-labelledby="reads-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="reads-title" class="reveal">What it reads</h2></div>
+      <div class="card spec-panel reveal">
+        <table class="spec-table">
+          <caption class="sr-only">Inputs Tabscribe accepts and what it does with them</caption>
+          <thead><tr><th scope="col">Input</th><th scope="col">Formats</th><th scope="col">How</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Sheet music</th><td>PDF, PNG, JPG</td><td>In-browser optical music recognition</td></tr>
+            <tr><th scope="row">MIDI</th><td>MIDI files</td><td>Read straight into the editor</td></tr>
+            <tr><th scope="row">Notation</th><td>MusicXML, ABC</td><td>Parsed into editable tab</td></tr>
+            <tr><th scope="row">Tab files</th><td>Guitar Pro</td><td>Opened for editing</td></tr>
+            <tr><th scope="row">Audio</th><td>Recordings</td><td>Pitch detection into notes</td></tr>
+          </tbody>
+        </table>
+        <p class="spec-foot">Then: chord names and diagrams, playback with sampled acoustic guitar, and export to MIDI, MusicXML, and ASCII tab. It works offline as a PWA.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="built" aria-labelledby="built-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="built-title" class="reveal">How it's built</h2></div>
+      <ul class="chips big-chips reveal"><li>React</li><li>TypeScript</li><li>Vite</li><li>VexFlow</li><li>abcjs</li><li>@tonejs/midi</li><li>pitchy</li><li>tesseract.js</li></ul>
+    </div>
+  </section>
+
+  <section class="section" id="shortcuts" aria-labelledby="shortcuts-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="shortcuts-title" class="reveal">Editor shortcuts</h2>
+        <p class="section-intro reveal">Click a note, then use the keys. Notes the app is less sure about show in amber.</p>
+      </div>
+      <ul class="keys reveal">
+        <li><kbd>Click</kbd><span>Select a note</span></li>
+        <li><kbd>&uarr;</kbd> <kbd>&darr;</kbd><span>Change pitch</span></li>
+        <li><kbd>0</kbd> to <kbd>9</kbd><span>Set the fret</span></li>
+        <li><kbd>S</kbd><span>Move to another string</span></li>
+        <li><kbd>L</kbd><span>Lock the fingering</span></li>
+        <li><kbd>Cmd</kbd> / <kbd>Ctrl</kbd> + <kbd>Z</kbd><span>Undo</span></li>
+      </ul>
+      <div class="back-row reveal"><a class="btn btn-ghost" href="/#projects">Back to projects<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-home"/></svg></span></a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-line">Edward &quot;EJ&quot; Quigley. Based between New Jersey and New Hampshire.</p>
+    <nav aria-label="Social links"><div class="socials">
+      <a class="social" href="https://www.instagram.com/madebyejq/" target="_blank" rel="noopener" aria-label="EJ on Instagram"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-instagram"/></svg>Instagram</a>
+      <a class="social" href="https://www.tiktok.com/@madebyejq" target="_blank" rel="noopener" aria-label="EJ on TikTok"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-tiktok"/></svg>TikTok</a>
+      <a class="social" href="https://www.linkedin.com/in/madebyejq" target="_blank" rel="noopener" aria-label="EJ on LinkedIn"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-linkedin"/></svg>LinkedIn</a>
+      <a class="social" href="https://github.com/ejq17" target="_blank" rel="noopener" aria-label="EJ on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-github"/></svg>GitHub</a>
+    </div></nav>
+    <p class="copyright">&copy; 2026 Edward Quigley</p>
+  </div>
+</footer>
+</body>
+</html>

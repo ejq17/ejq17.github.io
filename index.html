@@ -60,12 +60,13 @@
   <div class="header-bar">
     <a class="brand" href="/" aria-label="Edward Quigley, home"><span class="brand-mark" aria-hidden="true">EQ</span>Edward Quigley</a>
     <nav class="nav-desktop" aria-label="Primary">
-      <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+      <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
     </nav>
+    <button class="cmdk-hint" type="button" data-cmdk-open aria-label="Open the command palette" aria-keyshortcuts="Control+K Meta+K" hidden>&#8984;K</button>
     <details class="menu">
       <summary aria-label="Menu"><span class="menu-bars" aria-hidden="true"></span>Menu</summary>
       <nav class="menu-panel" aria-label="Primary mobile">
-        <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+        <ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
       </nav>
     </details>
   </div>
@@ -143,15 +144,30 @@
     </div>
   </section>
 
+  <section class="section" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="story-title" class="reveal">How I got here</h2></div>
+      <ol class="timeline">
+        <li class="timeline-item reveal"><span class="timeline-when">2024</span><p>Co-founded AeroX Team, a Roblox aviation game.</p></li>
+        <li class="timeline-item reveal"><span class="timeline-when">Early 2025</span><p>Took a discovery flight and started training toward my private pilot certificate.</p></li>
+        <li class="timeline-item reveal"><span class="timeline-when">September 2025</span><p>Became CTO at NextStep Behavioral Services.</p></li>
+        <li class="timeline-item reveal"><span class="timeline-when">September 2026</span><p>Formed Casematch LLC in New Hampshire.</p></li>
+      </ol>
+    </div>
+  </section>
+
   <section class="section" id="projects" aria-labelledby="projects-title">
     <div class="wrap">
       <div class="section-head"><h2 id="projects-title" class="reveal">Projects</h2></div>
       <div class="bento">
       <article class="card project reveal project-feature card-link">
         <div class="project-top"><span class="chip">Coming soon</span></div>
-        <h3><a href="https://joincasematch.com" target="_blank" rel="noopener">Casematch<span class="sr-only"> (opens in a new tab)</span></a></h3>
+        <h3><a href="/projects/casematch/">Casematch</a></h3>
         <p>A hiring platform built only for special education and ABA jobs.</p>
-        <span class="go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span>
+        <div class="project-foot">
+          <div class="foot-text"><span class="cta-hint">See the preview</span><a class="mini-link" href="https://joincasematch.com" target="_blank" rel="noopener">joincasematch.com<span class="sr-only"> (opens in a new tab)</span></a></div>
+          <span class="go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span>
+        </div>
       </article>
       <article class="card project reveal project-feature alt card-link">
         <div class="project-top"><span class="chip chip-active">Active</span></div>
@@ -185,9 +201,12 @@
       </article>
       <article class="card project reveal card-link">
         <div class="project-top"><span class="chip">Open source</span></div>
-        <h3><a href="https://github.com/ejq17/tabscribe" target="_blank" rel="noopener">Tabscribe<span class="sr-only"> (opens in a new tab)</span></a></h3>
+        <h3><a href="/projects/tabscribe/">Tabscribe</a></h3>
         <p>Turns sheet music, MIDI, and audio into guitar tabs, offline, in your browser.</p>
-        <span class="go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span>
+        <div class="project-foot">
+          <div class="foot-text"><span class="cta-hint">Try the demo</span><a class="mini-link" href="https://ejq17.github.io/tabscribe/" target="_blank" rel="noopener">Open the live app<span class="sr-only"> (opens in a new tab)</span></a></div>
+          <span class="go" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span>
+        </div>
       </article>
       </div>
     </div>
@@ -213,6 +232,11 @@
       <li class="card now-item reveal"><span class="now-icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-globe"/></svg></span><p>Operating Coropos Web Services.</p></li>
       <li class="card now-item reveal"><span class="now-icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-plane"/></svg></span><p>Training for my private pilot certificate.</p></li>
       </ul>
+      <div class="activity reveal" id="activity" aria-labelledby="activity-title">
+        <h3 id="activity-title">Recent on GitHub</h3>
+        <ul class="activity-list" data-activity-list hidden></ul>
+        <p class="activity-fallback" data-activity-fallback>Recent activity lives on <a href="https://github.com/ejq17" target="_blank" rel="noopener">GitHub<span class="sr-only"> (opens in a new tab)</span></a>.</p>
+      </div>
     </div>
   </section>
 
@@ -225,7 +249,7 @@
       <div class="beyond-grid">
       <article class="card beyond-item reveal feature"><h3>Aviation</h3><p>I'm a student pilot training toward my private pilot certificate, and I'm interested in air traffic control long term.</p></article>
       <article class="card beyond-item reveal"><h3>Jazz guitar</h3><p>I play in a jazz band.</p></article>
-      <article class="card beyond-item reveal"><h3>Formula 1</h3><p>I'm a McLaren fan, and Oscar Piastri is my driver.</p></article>
+      <article class="card beyond-item reveal"><h3>Formula 1</h3><p>I'm a McLaren fan, and Oscar Piastri is my driver.</p><button class="papaya-toggle" type="button" data-papaya aria-pressed="false" aria-label="Switch the accent to McLaren papaya" title="Switch the accent to McLaren papaya" hidden><span class="papaya-dot" aria-hidden="true"></span></button></article>
       <article class="card beyond-item reveal"><h3>Tech tinkering</h3><p>Gadgets, networking, servers, and a home lab where I mess around with cyber security setups.</p></article>
       <article class="card beyond-item reveal"><h3>Fire department</h3><p>One day I want to serve with my local fire department.</p></article>
       </div>
@@ -246,5 +270,14 @@
     <p class="copyright">&copy; 2026 Edward Quigley</p>
   </div>
 </footer>
+
+<dialog class="cmdk" id="cmdk" aria-label="Command palette">
+  <div class="cmdk-panel">
+    <input class="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" aria-label="Search sections, pages, and links" placeholder="Jump to a section, page, or link" autocomplete="off" spellcheck="false">
+    <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
+    <p class="cmdk-empty" hidden>No matches.</p>
+    <p class="cmdk-foot" aria-hidden="true">Arrows to move, Enter to open, Esc to close</p>
+  </div>
+</dialog>
 </body>
 </html>

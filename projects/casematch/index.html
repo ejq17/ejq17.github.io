@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casematch | EJ Quigley</title>
+<meta name="description" content="Casematch is a hiring platform built only for special education and ABA jobs. Try an interactive preview of how its match checklist works, using sample data.">
+<link rel="canonical" href="https://ejq17.github.io/projects/casematch/">
+<meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Edward Quigley">
+<meta property="og:title" content="Casematch | EJ Quigley">
+<meta property="og:description" content="Casematch is a hiring platform built only for special education and ABA jobs. Try an interactive preview of how its match checklist works, using sample data.">
+<meta property="og:url" content="https://ejq17.github.io/projects/casematch/">
+<meta property="og:image" content="https://ejq17.github.io/assets/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Edward Quigley. Developer, web designer, CTO, student pilot, jazz guitarist, and entrepreneur.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casematch | EJ Quigley">
+<meta name="twitter:description" content="Casematch is a hiring platform built only for special education and ABA jobs. Try an interactive preview of how its match checklist works, using sample data.">
+<meta name="twitter:image" content="https://ejq17.github.io/assets/images/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;550;650;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/casematch.css">
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/casematch-demo.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-bar">
+    <a class="brand" href="/" aria-label="Edward Quigley, home"><span class="brand-mark" aria-hidden="true">EQ</span>Edward Quigley</a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Menu"><span class="menu-bars" aria-hidden="true"></span>Menu</summary>
+      <nav class="menu-panel" aria-label="Primary mobile">
+        <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+  <section class="cm-hero" aria-labelledby="cm-title">
+    <div class="wrap">
+      <a class="cm-back rise" href="/#projects"><svg class="icon cm-back-icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-right"/></svg>All projects</a>
+      <p class="cm-eyebrow rise">Coming soon</p>
+      <h1 id="cm-title" class="rise">Casematch</h1>
+      <p class="cm-lede rise">A hiring platform built only for special education and ABA jobs.</p>
+      <div class="cm-actions rise">
+        <a class="btn btn-primary" href="https://joincasematch.com" target="_blank" rel="noopener">Visit joincasematch.com<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="btn btn-ghost" href="/#projects">Back to projects<span class="btn-icon"><svg class="icon cm-back-icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-right"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cm-why" aria-labelledby="why-title">
+    <div class="wrap cm-why-grid">
+      <h2 id="why-title" class="reveal">Why I'm building it</h2>
+      <div class="cm-why-text reveal">
+        <p>General job boards don't understand these roles. Credentials, settings, and the kind of work involved all matter in special education and ABA, and a keyword search on a general board misses most of that.</p>
+        <p>So Casematch is made for this field and nothing else. I design and build it myself, and I work with BCBAs to test and verify it. It's in development now.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cm-demo-section" id="walkthrough" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="demo-title" class="reveal">See how a match works</h2>
+        <p class="section-intro reveal">Three steps: a candidate, a role, and the checklist that compares them.</p>
+      </div>
+
+      <div class="cm-shell reveal" data-cm-demo>
+        <div class="cm-core">
+          <p class="cm-preview-label"><span class="cm-dot" aria-hidden="true"></span>Preview with sample data. Nothing here is real.</p>
+
+          <p class="cm-nojs">This preview needs JavaScript to be interactive. Below are the sample candidate's starting values.</p>
+
+          <div class="cm-stepbar" data-cm-stepbar hidden>
+            <ol class="cm-steps" data-cm-steps></ol>
+            <p class="cm-live" data-cm-live></p>
+          </div>
+
+          <div class="cm-panel" data-cm-panel="0" data-cm-initial>
+            <h3 class="cm-panel-title" tabindex="-1">Candidate profile</h3>
+            <p class="cm-panel-sub">Sample candidate</p>
+            <dl class="cm-static">
+              <div><dt>Credential</dt><dd>RBT</dd></div>
+              <div><dt>Setting</dt><dd>Clinic-based</dd></div>
+              <div><dt>Employment type</dt><dd>Full-time</dd></div>
+              <div><dt>Earliest start</dt><dd>Within 30 days</dd></div>
+              <div><dt>Location radius</dt><dd>25 miles</dd></div>
+            </dl>
+          </div>
+          <div class="cm-panel" data-cm-panel="1" hidden></div>
+          <div class="cm-panel" data-cm-panel="2" hidden></div>
+
+          <div class="cm-nav" data-cm-nav hidden>
+            <button class="cm-navbtn" type="button" data-cm-prev>Back</button>
+            <button class="cm-navbtn cm-navbtn-main" type="button" data-cm-next>Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cm-pipeline reveal">
+        <h3 class="cm-pipeline-title">After a match, employers move people through four stages</h3>
+        <ol class="cm-stages">
+          <li><span class="cm-stage-num" aria-hidden="true">1</span>Applied</li>
+          <li><span class="cm-stage-num" aria-hidden="true">2</span>Screened</li>
+          <li><span class="cm-stage-num" aria-hidden="true">3</span>Interview</li>
+          <li><span class="cm-stage-num" aria-hidden="true">4</span>Offer</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="built" aria-labelledby="built-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="built-title" class="reveal">Built with</h2></div>
+      <ul class="cm-built reveal"><li>TypeScript</li></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-line">Edward &quot;EJ&quot; Quigley. Based between New Jersey and New Hampshire.</p>
+    <nav aria-label="Social links"><div class="socials">
+      <a class="social" href="https://www.instagram.com/madebyejq/" target="_blank" rel="noopener" aria-label="EJ on Instagram"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-instagram"/></svg>Instagram</a>
+      <a class="social" href="https://www.tiktok.com/@madebyejq" target="_blank" rel="noopener" aria-label="EJ on TikTok"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-tiktok"/></svg>TikTok</a>
+      <a class="social" href="https://www.linkedin.com/in/madebyejq" target="_blank" rel="noopener" aria-label="EJ on LinkedIn"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-linkedin"/></svg>LinkedIn</a>
+      <a class="social" href="https://github.com/ejq17" target="_blank" rel="noopener" aria-label="EJ on GitHub"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-github"/></svg>GitHub</a>
+    </div></nav>
+    <p class="copyright">&copy; 2026 Edward Quigley</p>
+  </div>
+</footer>
+</body>
+</html>
