@@ -52,3 +52,10 @@
 .nf h1 { font-family: var(--font-head); font-weight: 700; font-size: clamp(2.75rem, 12vw, 4.5rem); letter-spacing: -0.045em; line-height: 1; }
 .nf p { color: var(--muted); }
 .nf .btn { margin-top: 8px; }
+
+/* Grouped sections */
+.link-group + .link-group { margin-top: 28px; }
+.link-group-title {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 10px 6px;
+}

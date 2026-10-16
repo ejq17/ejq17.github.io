@@ -38,12 +38,13 @@
   <div class="header-bar">
     <a class="brand" href="/" aria-label="Edward Quigley, home"><span class="brand-mark" aria-hidden="true">EQ</span>Edward Quigley</a>
     <nav class="nav-desktop" aria-label="Primary">
-      <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+      <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
     </nav>
+    <button class="cmdk-hint" type="button" data-cmdk-open aria-label="Open the command palette" aria-keyshortcuts="Control+K Meta+K" hidden>&#8984;K</button>
     <details class="menu">
       <summary aria-label="Menu"><span class="menu-bars" aria-hidden="true"></span>Menu</summary>
       <nav class="menu-panel" aria-label="Primary mobile">
-        <ul><li><a href="/#about">About</a></li><li><a href="/#projects" aria-current="true">Projects</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+        <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
       </nav>
     </details>
   </div>
@@ -145,5 +146,13 @@
     <p class="copyright">&copy; 2026 Edward Quigley</p>
   </div>
 </footer>
+<dialog class="cmdk" id="cmdk" aria-label="Command palette">
+  <div class="cmdk-panel">
+    <input class="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" aria-label="Search sections, pages, and links" placeholder="Jump to a section, page, or link" autocomplete="off" spellcheck="false">
+    <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
+    <p class="cmdk-empty" hidden>No matches.</p>
+    <p class="cmdk-foot" aria-hidden="true">Arrows to move, Enter to open, Esc to close</p>
+  </div>
+</dialog>
 </body>
 </html>
