@@ -14,15 +14,12 @@ Served as the root of https://ejq17.github.io via GitHub Pages (deploys from the
 - `assets/images/` - favicon, OG image, icon sprite (`icons.svg`)
 - `.nojekyll` - tells GitHub Pages to serve files as-is
 
-## Replace the headshot placeholder
+## Photos
 
-The "EQ" monogram is a placeholder.
+- `assets/images/headshot.jpg` is the home-page portrait (4:5, 800 x 1000, cropped to fill).
+- `assets/images/avatar.jpg` is the circular avatar on `/links/` (square, 416 x 416).
 
-1. Save your photo as `assets/images/headshot.jpg` (portrait, about 4:5, roughly 800 x 1000 px; it is cropped to fill).
-2. In `index.html`, find the `HEADSHOT` comment in the hero and un-comment the `<img>` line below it.
-3. Do the same in `links/index.html` (the `AVATAR` comment; the image is cropped to a circle).
-
-The photo is layered on top of the monogram, so nothing else changes.
+To change the photo, replace those two files with the same sizes. Keep originals that include other people out of this folder; everything here is published.
 
 ## Edit content
 
