@@ -215,7 +215,7 @@
       ['TikTok', 'https://www.tiktok.com/@madebyejq', 'External'], ['LinkedIn', 'https://www.linkedin.com/in/madebyejq', 'External'],
       ['Casematch site', 'https://joincasematch.com', 'External'], ['Coropos', 'https://coroposws.com', 'External'],
       ['NextStep', 'https://nextstepbhs.com', 'External'], ['Equal North', 'https://equalnorth.dev', 'External'],
-      ['Tabscribe app', 'https://ejq17.github.io/tabscribe/', 'External']
+      ['Tabscribe app', 'https://edwardquigley.com/tabscribe/', 'External']
     ];
     var input = qs('.cmdk-input', dlg), ul = qs('.cmdk-list', dlg), empty = qs('.cmdk-empty', dlg);
     var shown = [], idx = 0;

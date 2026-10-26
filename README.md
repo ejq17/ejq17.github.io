@@ -1,7 +1,7 @@
 # EJ Quigley personal site
 
 Plain HTML, CSS and a little vanilla JS. No build step, no npm, no frameworks.
-Served as the root of https://ejq17.github.io via GitHub Pages (deploys from the `main` branch, root folder).
+Served as the root of https://edwardquigley.com via GitHub Pages (deploys from the `main` branch, root folder).
 
 ## Structure
 
@@ -42,7 +42,7 @@ All copy lives directly in the HTML files. Search for the text and edit it.
 
 ## Deploy
 
-Push to `main`. In the repo settings, Pages should be set to "Deploy from a branch", branch `main`, folder `/ (root)`. The repo must be named `ejq17.github.io` for the site to live at the root URL.
+Push to `main`. In the repo settings, Pages is set to "Deploy from a branch", branch `main`, folder `/ (root)`, with the custom domain `edwardquigley.com` (the `CNAME` file in the repo root; do not delete it). DNS lives at Cloudflare: four `A` records on the apex pointing at GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), the matching `AAAA` records, and a `CNAME` for `www` pointing at `ejq17.github.io`, all DNS-only. GitHub redirects `ejq17.github.io` and `www.edwardquigley.com` to the apex. Project sites such as the Tabscribe app also move under the domain (`edwardquigley.com/tabscribe/`). Absolute URLs in the HTML (canonical, OG, sitemap) use `https://edwardquigley.com`.
 
 ## Preview locally
 
