@@ -154,13 +154,62 @@
     }
   }
 
+  /* --- Contribution graph: reads /assets/data/contributions.json (written nightly by a GitHub Action) --- */
+  var cbox = qs('[data-contrib]');
+  if (cbox && window.fetch) {
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    var el = function (n, attrs) { var e = document.createElementNS(SVGNS, n); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; };
+    var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var nice = function (iso) { var d = new Date(iso + 'T12:00:00'); return MONTHS[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear(); };
+    fetch('/assets/data/contributions.json', { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) {
+        var weeks = d && d.weeks;
+        if (!Array.isArray(weeks) || !weeks.length) return;
+        var CELL = 11, GAP = 3, STEP = CELL + GAP, TOP = 18, LEFT = 0;
+        var w = LEFT + weeks.length * STEP - GAP, h = TOP + 7 * STEP - GAP;
+        var total = typeof d.total === 'number' ? d.total : 0;
+        var svg = el('svg', { class: 'contrib-svg', viewBox: '0 0 ' + w + ' ' + h, role: 'img', 'aria-labelledby': 'contrib-title', 'aria-describedby': 'contrib-desc' });
+        var desc = el('desc', { id: 'contrib-desc' }); desc.textContent = total + ' contributions in the last year, one square per day.'; svg.appendChild(desc);
+        var lastMonth = -1, lastLabel = null, lastLabelWi = -9;
+        weeks.forEach(function (week, wi) {
+          week.forEach(function (day, di) {
+            if (!Array.isArray(day) || day.length < 3) return;
+            var date = String(day[0]), count = Number(day[1]) || 0, level = Math.max(0, Math.min(4, Number(day[2]) || 0));
+            var month = new Date(date + 'T12:00:00').getMonth();
+            if (di === 0 && month !== lastMonth && wi < weeks.length - 1) {
+              lastMonth = month;
+              /* A month that only covers the first week or two would collide with the next label, so drop it. */
+              if (lastLabel && wi - lastLabelWi < 3) svg.removeChild(lastLabel);
+              var t = el('text', { x: LEFT + wi * STEP, y: 10 }); t.textContent = MONTHS[month]; svg.appendChild(t);
+              lastLabel = t; lastLabelWi = wi;
+            }
+            var r = el('rect', { class: 'contrib-cell', 'data-l': level, x: LEFT + wi * STEP, y: TOP + di * STEP, width: CELL, height: CELL, rx: 2.5 });
+            var title = el('title'); title.textContent = (count === 1 ? '1 contribution' : count + ' contributions') + ' on ' + nice(date); r.appendChild(title);
+            svg.appendChild(r);
+          });
+        });
+        var scroller = qs('[data-contrib-scroll]', cbox), totalEl = qs('[data-contrib-total]', cbox);
+        scroller.textContent = ''; scroller.appendChild(svg);
+        totalEl.textContent = (total === 1 ? '1 contribution' : total + ' contributions') + ' in the last year';
+        cbox.hidden = false;
+        scroller.scrollLeft = scroller.scrollWidth; /* newest weeks visible first on small screens */
+      })
+      .catch(function () {});
+  }
+
+  /* --- Résumé: the Download button is Save as PDF via the print stylesheet --- */
+  var pr = qs('[data-print]');
+  if (pr) pr.addEventListener('click', function () { window.print(); });
+
   /* --- Command palette: Cmd/Ctrl+K. Edit the ENTRIES list to change what it offers. --- */
   var dlg = qs('#cmdk');
   if (dlg && typeof dlg.showModal === 'function') {
     var ENTRIES = [
       ['About', '/#about', 'Section'], ['Experience', '/#experience', 'Section'], ['How I got here', '/#story', 'Section'],
-      ['Projects', '/#projects', 'Section'], ['Skills', '/#skills', 'Section'], ['Currently', '/#currently', 'Section'],
-      ['Outside the work', '/#beyond', 'Section'],
+      ['Projects', '/#projects', 'Section'], ['Skills', '/#skills', 'Section'], ['Right now', '/#now', 'Section'],
+      ['Off the keyboard', '/#credentials', 'Section'], ['Outside the work', '/#beyond', 'Section'], ['Get in touch', '/#contact', 'Section'],
+      ['Résumé', '/resume/', 'Page'], ['Speaking', '/speaking/', 'Page'], ['Conferences', '/conferences/', 'Page'], ['Certifications', '/certifications/', 'Page'],
       ['Now', '/now/', 'Page'], ['Links', '/links/', 'Page'], ['Tabscribe', '/projects/tabscribe/', 'Page'], ['Casematch', '/projects/casematch/', 'Page'],
       ['GitHub', 'https://github.com/ejq17', 'External'], ['Instagram', 'https://www.instagram.com/madebyejq/', 'External'],
       ['TikTok', 'https://www.tiktok.com/@madebyejq', 'External'], ['LinkedIn', 'https://www.linkedin.com/in/madebyejq', 'External'],
@@ -195,7 +244,8 @@
       dlg.close();
       if (e[2] === 'External') window.open(e[1], '_blank', 'noopener'); else window.location.href = e[1];
     };
-    var open = function () { input.value = ''; build(); dlg.showModal(); input.focus(); };
+    var open = function () { input.value = ''; build(); dlg.showModal(); input.setAttribute('aria-expanded', 'true'); input.focus(); };
+    dlg.addEventListener('close', function () { input.setAttribute('aria-expanded', 'false'); });
     document.addEventListener('keydown', function (e) {
       if ((e.metaKey || e.ctrlKey) && !e.altKey && e.key.toLowerCase() === 'k') {
         e.preventDefault();
@@ -210,11 +260,5 @@
       } else if (e.key === 'Enter' && shown[idx]) { e.preventDefault(); go(shown[idx]); }
     });
     dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-    var hint = qs('[data-cmdk-open]');
-    if (hint) {
-      hint.hidden = false;
-      if (!/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) hint.textContent = 'Ctrl K';
-      hint.addEventListener('click', open);
-    }
   }
 })();

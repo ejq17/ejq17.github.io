@@ -36,7 +36,7 @@
 .demo-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
 .demo-readout { display: grid; gap: 2px; min-width: 12ch; }
 .readout-label { color: var(--faint); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-.readout-note { font-family: var(--font-head); font-weight: 650; font-size: 1.25rem; letter-spacing: -0.02em; }
+.readout-note { font-family: var(--font-head); font-weight: 600; font-size: 1.25rem; letter-spacing: -0.02em; }
 .demo-controls { display: flex; gap: 10px; }
 .demo-btn {
   min-height: 48px; min-width: 88px; padding: 0 22px; border-radius: 999px; cursor: pointer;
@@ -99,7 +99,7 @@
 .spec-table th, .spec-table td { padding: 18px clamp(18px, 3vw, 32px); vertical-align: top; }
 .spec-table thead th { color: var(--faint); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; border-bottom: 1px solid var(--line); }
 .spec-table tbody tr + tr > * { border-top: 1px solid var(--line); }
-.spec-table tbody th { font-family: var(--font-head); font-weight: 650; letter-spacing: -0.01em; white-space: nowrap; }
+.spec-table tbody th { font-family: var(--font-head); font-weight: 600; letter-spacing: -0.01em; white-space: nowrap; }
 .spec-table td { color: var(--muted); }
 .spec-foot { padding: 20px clamp(18px, 3vw, 32px); border-top: 1px solid var(--line); color: var(--muted); background: var(--chip); }
 @media (max-width: 640px) {

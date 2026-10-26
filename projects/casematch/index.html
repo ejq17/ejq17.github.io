@@ -16,17 +16,15 @@
 <meta property="og:title" content="Casematch | EJ Quigley">
 <meta property="og:description" content="Casematch is a hiring platform built only for special education and ABA jobs. Try an interactive preview of how its match checklist works, using sample data.">
 <meta property="og:url" content="https://ejq17.github.io/projects/casematch/">
-<meta property="og:image" content="https://ejq17.github.io/assets/images/og-image.png">
+<meta property="og:image" content="https://ejq17.github.io/assets/images/og-casematch.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Edward Quigley. Developer, web designer, CTO, student pilot, jazz guitarist, and entrepreneur.">
+<meta property="og:image:alt" content="Casematch. A hiring platform built only for special education and ABA jobs.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Casematch | EJ Quigley">
 <meta name="twitter:description" content="Casematch is a hiring platform built only for special education and ABA jobs. Try an interactive preview of how its match checklist works, using sample data.">
-<meta name="twitter:image" content="https://ejq17.github.io/assets/images/og-image.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;550;650;700&family=Inter:wght@400;500;600&display=swap">
+<meta name="twitter:image" content="https://ejq17.github.io/assets/images/og-casematch.png">
+<link rel="preload" href="/assets/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.css">
 <link rel="stylesheet" href="/assets/css/casematch.css">
 <script src="/assets/js/site.js" defer></script>
@@ -36,15 +34,14 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="header-bar">
-    <a class="brand" href="/" aria-label="Edward Quigley, home"><span class="brand-mark" aria-hidden="true">EQ</span>Edward Quigley</a>
+    <a class="brand" href="/" aria-label="Edward Quigley, home">Edward Quigley</a>
     <nav class="nav-desktop" aria-label="Primary">
-      <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+      <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/resume/">R&eacute;sum&eacute;</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
     </nav>
-    <button class="cmdk-hint" type="button" data-cmdk-open aria-label="Open the command palette" aria-keyshortcuts="Control+K Meta+K" hidden>&#8984;K</button>
     <details class="menu">
       <summary aria-label="Menu"><span class="menu-bars" aria-hidden="true"></span>Menu</summary>
       <nav class="menu-panel" aria-label="Primary mobile">
-        <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/#skills">Skills</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
+        <ul><li><a href="/#about">About</a></li><li><a href="/#experience">Experience</a></li><li><a href="/#projects">Projects</a></li><li><a href="/resume/">R&eacute;sum&eacute;</a></li><li><a href="/now/">Now</a></li><li><a class="nav-cta" href="/links/">Links</a></li></ul>
       </nav>
     </details>
   </div>
@@ -125,13 +122,6 @@
     </div>
   </section>
 
-  <section class="section" id="built" aria-labelledby="built-title">
-    <div class="wrap">
-      <div class="section-head"><h2 id="built-title" class="reveal">Built with</h2></div>
-      <ul class="cm-built reveal"><li>TypeScript</li></ul>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
@@ -148,7 +138,7 @@
 </footer>
 <dialog class="cmdk" id="cmdk" aria-label="Command palette">
   <div class="cmdk-panel">
-    <input class="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-list" aria-autocomplete="list" aria-label="Search sections, pages, and links" placeholder="Jump to a section, page, or link" autocomplete="off" spellcheck="false">
+    <input class="cmdk-input" type="text" role="combobox" aria-expanded="false" aria-controls="cmdk-list" aria-autocomplete="list" aria-label="Search sections, pages, and links" placeholder="Jump to a section, page, or link" autocomplete="off" spellcheck="false">
     <ul class="cmdk-list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
     <p class="cmdk-empty" hidden>No matches.</p>
     <p class="cmdk-foot" aria-hidden="true">Arrows to move, Enter to open, Esc to close</p>

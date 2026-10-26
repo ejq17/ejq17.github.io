@@ -1,0 +1,108 @@
+/* /resume/ and the Speaking, Conferences, and Certifications pages. Builds on site.css tokens. */
+.page-hero { padding-block: clamp(40px, 7vw, 96px) clamp(8px, 2vw, 24px); }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 32px; padding: 0 14px;
+  border-radius: 999px; background: var(--accent-soft); color: var(--accent-text);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.page-hero h1 {
+  margin-top: 22px; max-width: 16ch;
+  font-family: var(--font-head); font-weight: 700; line-height: 0.98; letter-spacing: -0.045em;
+  font-size: clamp(2.75rem, 8.4vw, 5.75rem);
+}
+.page-lede { margin-top: 22px; max-width: 40ch; color: var(--muted); font-size: clamp(1.125rem, 2.2vw, 1.375rem); }
+.page-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 480px) { .page-actions .btn { width: 100%; } }
+.back-link {
+  display: flex; width: fit-content; align-items: center; gap: 8px; min-height: 44px; margin-bottom: 14px;
+  color: var(--muted); font-weight: 500; text-decoration: none; border-radius: 999px;
+}
+.back-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+.back-icon { width: 18px; height: 18px; transform: rotate(180deg); transition: transform 0.5s var(--ease); }
+.back-link:hover .back-icon { transform: rotate(180deg) translateX(3px); }
+
+/* ---------- Entry cards (talks, conferences, certifications) ---------- */
+.entries { display: grid; gap: 16px; grid-template-columns: 1fr; }
+.entry { display: grid; gap: 12px; align-content: start; }
+.entry-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.entry-when { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent-text); }
+.entry h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+.entry-where { color: var(--muted); font-weight: 500; }
+.entry p { color: var(--muted); max-width: 56ch; }
+.entry-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.entry-meta li { display: inline-flex; align-items: center; min-height: 32px; padding: 2px 12px; border-radius: 999px; background: var(--chip); font-size: 0.875rem; font-weight: 500; }
+.entry-links { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.entry-links .text-link { min-height: 40px; }
+.year-head { margin: clamp(28px, 4vw, 44px) 0 14px; color: var(--faint); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.year-head:first-child { margin-top: 0; }
+.chip-planned { background: var(--chip); color: var(--faint); }
+@media (min-width: 760px) { .entries { grid-template-columns: repeat(2, 1fr); gap: 20px; } .entry.wide { grid-column: span 2; } }
+
+/* ---------- Résumé page ---------- */
+.resume { display: grid; gap: clamp(40px, 6vw, 72px); }
+.r-section { display: grid; gap: 20px; }
+.r-section > h2 { font-size: clamp(1.5rem, 3vw, 2rem); letter-spacing: -0.03em; }
+.r-grid { display: grid; gap: 24px; }
+@media (min-width: 860px) { .r-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: 56px; align-items: start; } .r-section > h2 { position: sticky; top: 96px; } }
+.r-summary { font-family: var(--font-head); font-weight: 500; letter-spacing: -0.02em; line-height: 1.38; font-size: clamp(1.2rem, 2.2vw, 1.5rem); max-width: 40em; }
+.r-items { display: grid; gap: 20px; }
+.r-item { display: grid; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.r-item:last-child { border-bottom: 0; padding-bottom: 0; }
+.r-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.r-head h3 { font-size: 1.1875rem; }
+.r-when { color: var(--faint); font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+.r-org { color: var(--muted); font-weight: 500; }
+.r-bullets { display: grid; gap: 6px; padding-left: 18px; list-style: disc; color: var(--muted); }
+.r-bullets li::marker { color: var(--accent-text); }
+.r-skills { display: grid; gap: 12px; }
+.r-skill { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.r-skill:last-child { border-bottom: 0; padding-bottom: 0; }
+.r-skill h3 { font-size: 1rem; }
+.r-skill p { color: var(--muted); }
+@media (min-width: 640px) { .r-skill { grid-template-columns: 200px 1fr; gap: 20px; } }
+.r-list { display: grid; gap: 10px; }
+.r-list li { display: grid; gap: 2px; }
+.r-list strong { font-weight: 600; }
+.r-list span { color: var(--muted); }
+.r-more { color: var(--muted); font-size: 0.9375rem; }
+.r-more a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+.r-more a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.r-contact { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 0.9375rem; margin-top: 18px; }
+.r-contact a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+.r-contact a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Print: Save as PDF gives a clean two-page résumé ---------- */
+@media print {
+  @page { margin: 12mm 14mm; }
+  html { scroll-padding-top: 0; }
+  body { background: #fff; color: #111; font-size: 9.5pt; line-height: 1.3; }
+  body::before, .site-header, .site-footer, .cmdk, .page-actions, .back-link, .eyebrow, .skip, .r-more, .no-print { display: none !important; }
+  .wrap { max-width: none; padding: 0; }
+  .section { padding: 0; }
+  .page-hero { padding: 0 0 4mm; }
+  .page-hero h1 { font-size: 22pt; margin: 0; max-width: none; }
+  .page-lede { font-size: 11pt; margin-top: 4pt; max-width: none; color: #333; }
+  .r-contact { margin-top: 6pt; font-size: 9.5pt; color: #333; }
+  .r-contact a { color: #111; text-decoration: none; }
+  .resume { gap: 4mm; }
+  .r-section { gap: 3mm; break-inside: auto; }
+  .r-section > h2 { font-size: 10pt; letter-spacing: 0.1em; text-transform: uppercase; color: #555; position: static; padding-bottom: 2pt; border-bottom: 1px solid #ccc; }
+  .r-grid { display: block; }
+  .r-grid > h2 { margin-bottom: 3mm; }
+  .r-summary { font-size: 9.75pt; font-weight: 400; letter-spacing: 0; line-height: 1.4; max-width: none; }
+  .r-items { gap: 2mm; }
+  .r-item { gap: 1.5pt; padding-bottom: 2mm; border-color: #e5e5e5; break-inside: avoid; }
+  .r-head h3 { font-size: 11pt; }
+  .r-when, .r-org { font-size: 9.5pt; color: #444; }
+  .r-bullets { gap: 0.5pt; color: #222; font-size: 9.5pt; }
+  .r-bullets li::marker { color: #888; }
+  .r-skills { gap: 1.5mm; }
+  .r-skill { grid-template-columns: 42mm 1fr; gap: 4mm; padding-bottom: 1.5mm; border-color: #eee; }
+  .r-skill h3 { font-size: 10pt; }
+  .r-skill p { font-size: 9.5pt; color: #222; }
+  .r-list { gap: 0.8mm; }
+  .r-list strong { font-size: 9.5pt; }
+  .r-list li { break-inside: avoid; }
+  .r-list span { color: #333; font-size: 9.25pt; }
+  a[href^="http"]::after { content: none; }
+}

@@ -45,7 +45,8 @@
   .now-cards { grid-template-columns: repeat(12, 1fr); }
   .now-lead { grid-column: span 7; grid-row: span 2; align-content: end; min-height: 380px; }
   .now-card { grid-column: span 5; }
-  .now-wide { grid-column: span 12; grid-template-columns: auto 1fr; column-gap: 28px; align-items: center; }
+  .now-card:nth-child(n+4) { grid-column: span 6; }
+  .now-wide { grid-template-columns: auto 1fr; column-gap: 28px; align-items: center; }
   .now-wide .now-badge { grid-row: span 3; margin: 0; }
 }
 
