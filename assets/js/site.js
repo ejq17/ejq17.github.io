@@ -1,5 +1,7 @@
 /* Scroll reveal (IntersectionObserver) + mobile menu niceties. No dependencies. */
 (function () {
+  /* --- The GitHub Pages mirror (ejq17.github.io) sends visitors to the real domain. Project sites like /tabscribe/ are separate repos and never load this file. --- */
+  if (location.hostname === 'ejq17.github.io') { location.replace('https://edwardquigley.com' + location.pathname + location.search + location.hash); return; }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var items = document.querySelectorAll('.reveal');
 
@@ -215,7 +217,7 @@
       ['TikTok', 'https://www.tiktok.com/@madebyejq', 'External'], ['LinkedIn', 'https://www.linkedin.com/in/madebyejq', 'External'],
       ['Casematch site', 'https://joincasematch.com', 'External'], ['Coropos', 'https://coroposws.com', 'External'],
       ['NextStep', 'https://nextstepbhs.com', 'External'], ['Equal North', 'https://equalnorth.dev', 'External'],
-      ['Tabscribe app', 'https://edwardquigley.com/tabscribe/', 'External']
+      ['Tabscribe app', 'https://ejq17.github.io/tabscribe/', 'External']
     ];
     var input = qs('.cmdk-input', dlg), ul = qs('.cmdk-list', dlg), empty = qs('.cmdk-empty', dlg);
     var shown = [], idx = 0;

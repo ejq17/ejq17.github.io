@@ -1,7 +1,7 @@
 # EJ Quigley personal site
 
 Plain HTML, CSS and a little vanilla JS. No build step, no npm, no frameworks.
-Served as the root of https://edwardquigley.com via GitHub Pages (deploys from the `main` branch, root folder).
+Served at https://edwardquigley.com from Cloudflare Pages. The GitHub repo `ejq17/ejq17.github.io` is the source; GitHub Pages still builds it at ejq17.github.io, where `site.js` redirects visitors to the real domain. Keep the GitHub Pages custom domain empty and never add a `CNAME` file: a custom domain on this user site would also move the Tabscribe project site (`ejq17.github.io/tabscribe/`), which is a separate repo and is not hosted on Cloudflare.
 
 ## Structure
 
@@ -42,7 +42,7 @@ All copy lives directly in the HTML files. Search for the text and edit it.
 
 ## Deploy
 
-Push to `main`. In the repo settings, Pages is set to "Deploy from a branch", branch `main`, folder `/ (root)`, with the custom domain `edwardquigley.com` (the `CNAME` file in the repo root; do not delete it). DNS lives at Cloudflare: four `A` records on the apex pointing at GitHub Pages (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), the matching `AAAA` records, and a `CNAME` for `www` pointing at `ejq17.github.io`, all DNS-only. GitHub redirects `ejq17.github.io` and `www.edwardquigley.com` to the apex. Project sites such as the Tabscribe app also move under the domain (`edwardquigley.com/tabscribe/`). Absolute URLs in the HTML (canonical, OG, sitemap) use `https://edwardquigley.com`.
+Hosting is Cloudflare Pages on `edwardquigley.com` (DNS also at Cloudflare, proxied). If the Cloudflare project is connected to this GitHub repo, a push to `main` deploys; if it was created by direct upload, redeploy by uploading the repo root again (or connect the repo under the project's Builds settings so pushes and the nightly contribution refresh go live automatically). `www.edwardquigley.com` needs its own DNS record or redirect rule in Cloudflare; GitHub Pages is not involved. GitHub Pages keeps serving the repo at ejq17.github.io as a redirecting mirror, so the Tabscribe app at `ejq17.github.io/tabscribe/` keeps working. Absolute URLs in the HTML (canonical, OG, sitemap, robots) use `https://edwardquigley.com`.
 
 ## Preview locally
 
