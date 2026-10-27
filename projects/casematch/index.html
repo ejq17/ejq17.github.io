@@ -29,6 +29,10 @@
 <link rel="stylesheet" href="/assets/css/casematch.css">
 <script src="/assets/js/site.js" defer></script>
 <script src="/assets/js/casematch-demo.js" defer></script>
+<!-- Cloudflare Web Analytics: privacy-friendly, no cookies, no banner needed. Enable it in the Cloudflare dashboard
+     (Analytics & Logs > Web Analytics > Add a site), then either turn on automatic injection for the Pages project, or paste
+     the site token below and remove the comment markers on every page (README.md has a one-line command). -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "CF_WEB_ANALYTICS_TOKEN"}'></script> -->
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -61,12 +65,40 @@
     </div>
   </section>
 
-  <section class="section cm-why" aria-labelledby="why-title">
-    <div class="wrap cm-why-grid">
-      <h2 id="why-title" class="reveal">Why I'm building it</h2>
-      <div class="cm-why-text reveal">
-        <p>General job boards don't understand these roles. Credentials, settings, and the kind of work involved all matter in special education and ABA, and a keyword search on a general board misses most of that.</p>
-        <p>So Casematch is made for this field and nothing else. I design and build it myself, and I work with BCBAs to test and verify it. It's in development now.</p>
+  <section class="section case" id="case" aria-labelledby="case-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="case-title" class="reveal">Problem, approach, result</h2></div>
+      <div class="case-rows">
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">1</span>Problem</p>
+          <div class="case-text">
+            <p>Hiring in ABA and special education doesn't fit a general job board. A BCBA licensed in New Hampshire who works in clinics is a different hire from one doing school-based work in Texas, and a keyword search can't tell them apart. Schools and agencies pay to post anyway, then sort the r&eacute;sum&eacute;s by hand. I see that side of it at NextStep, where I run the technology for an ABA provider.</p>
+          </div>
+        </div>
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">2</span>Approach</p>
+          <div class="case-text">
+            <p>The profile is built around the credential, not a r&eacute;sum&eacute; upload. The match score is a checklist, not a model: ten criteria, three checked on every posting (credential, license state, setting) and the rest only when the posting asks for them. Every criterion counts the same, a missing answer shows as unknown instead of failing, and there is no AI anywhere in the score. So a candidate can see exactly why they got 80% and what to fill in. The rules are published with a version number that shows under every score.</p>
+            <p>The product is React and TypeScript on Supabase. The parts that need a server, like email, Stripe billing, passkey sign-in, and calendar sync, run as 53 edge functions. I design and build it myself, and practicing BCBAs review the matching model before anything ships. The last review pass was in August 2026.</p>
+          </div>
+        </div>
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">3</span>Result</p>
+          <div class="case-text">
+            <p>It isn't public yet. What exists today is both sides of the marketplace end to end: profiles, postings, applying, a four-stage pipeline, and offers a candidate can accept in the app. Behind it, 1,507 unit tests and 157 end-to-end tests run on every push.</p>
+            <div class="case-stat"><p class="case-stat-num">1,507<small>unit tests</small></p><p class="case-stat-text">Plus 157 end-to-end tests in Playwright, run in CI on every push to main.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-figures">
+        <figure class="shot reveal">
+          <div class="shot-frame"><picture><source srcset="/assets/images/projects/casematch-candidate-match.webp" type="image/webp"><img src="/assets/images/projects/casematch-candidate-match.png" alt="Casematch sample match card for a Board Certified Behavior Analyst posting: credential, state, and setting chips above a five-item requirements checklist reading 100% match" width="1032" height="1256" loading="lazy" decoding="async"></picture></div>
+          <figcaption>The candidate side. Change a chip and the requirements checklist updates. Sample data.</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <div class="shot-frame"><picture><source srcset="/assets/images/projects/casematch-employer-applicants.webp" type="image/webp"><img src="/assets/images/projects/casematch-employer-applicants.png" alt="Casematch sample applicants card: four posting requirement toggles above three sample candidates scored 100%, 80%, and 40%" width="1032" height="924" loading="lazy" decoding="async"></picture></div>
+          <figcaption>The employer side. Toggle a requirement and the applicants re-rank. Sample data.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

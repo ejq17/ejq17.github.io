@@ -1,0 +1,13 @@
+/* TEAM */
+Name: Edward "EJ" Quigley
+Site: https://edwardquigley.com
+Email: equigley@coroposws.com
+GitHub: ejq17
+Location: New Jersey and New Hampshire, USA
+
+/* SITE */
+Last update: 2026-10-27
+Standards: HTML, CSS, a little vanilla JavaScript. No build step.
+Components: self-hosted Inter (SIL Open Font License), one SVG icon sprite
+Hosting: Cloudflare Pages, with GitHub Pages as a redirecting mirror
+Source: https://github.com/ejq17/ejq17.github.io

@@ -596,3 +596,42 @@ html[data-theme-accent="papaya"] :focus-visible { outline-color: var(--accent-te
 }
 
 @media print { .reveal, .rise { opacity: 1 !important; animation: none !important; transform: none !important; } }
+
+/* ---------- Case study (project pages): problem, approach, result ---------- */
+.case { padding-block: clamp(56px, 8vw, 96px) 0; }
+.case-rows { display: grid; gap: clamp(28px, 4vw, 44px); }
+.case-row { display: grid; gap: 14px; padding-top: clamp(24px, 3vw, 32px); border-top: 1px solid var(--line); }
+.case-row:first-child { border-top: 0; padding-top: 0; }
+.case-label {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content; margin: 0;
+  color: var(--accent-text); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.case-num { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); font-size: 0.8125rem; letter-spacing: 0; }
+.case-text { display: grid; gap: 14px; max-width: 62ch; color: var(--muted); font-size: 1.125rem; }
+.case-text a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+.case-text a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 860px) { .case-row { grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr); gap: 56px; } }
+.case-stat {
+  display: grid; gap: 6px; margin-top: 8px; padding: 22px 26px; width: fit-content; max-width: 100%;
+  border-radius: var(--r-inner); background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow), inset 0 1px 0 var(--hi);
+}
+.case-stat-num { font-family: var(--font-head); font-weight: 700; font-size: clamp(2.5rem, 6vw, 3.5rem); letter-spacing: -0.04em; line-height: 1; color: var(--ink); }
+.case-stat-num small { margin-left: 8px; font-size: 0.42em; font-weight: 600; letter-spacing: -0.01em; color: var(--muted); }
+.case-stat-text { max-width: 36ch; color: var(--muted); font-size: 0.9375rem; }
+.case-figures { display: grid; gap: 18px; margin-top: clamp(36px, 5vw, 56px); }
+.shot { display: grid; gap: 12px; margin: 0; align-content: start; }
+.shot-frame { padding: 6px; border-radius: 24px; background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow), inset 0 1px 0 var(--hi); }
+.shot img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.shot figcaption { padding-inline: 6px; color: var(--muted); font-size: 0.9375rem; max-width: 60ch; }
+@media (min-width: 760px) { .case-figures { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; } .shot-wide { grid-column: span 2; } }
+/* The screenshots are light UI, so take the edge off them in dark mode. */
+@media (prefers-color-scheme: dark) { .shot img { filter: brightness(0.86) contrast(1.04); } }
+
+/* ---------- Contact: best way to reach me, and the contact card ---------- */
+.reach { display: grid; gap: 12px; margin: 4px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.reach > div { display: grid; gap: 2px; }
+.reach dt { font-family: var(--font-body); font-weight: 600; font-size: 0.9375rem; letter-spacing: 0; color: var(--ink); }
+.reach dd { margin: 0; color: var(--muted); font-size: 0.9375rem; }
+.reach a { color: var(--accent-text); font-weight: 600; text-decoration: none; }
+.reach a:hover { text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 860px) { .contact-card .contact-actions { flex-direction: column; align-items: stretch; min-width: 240px; } }

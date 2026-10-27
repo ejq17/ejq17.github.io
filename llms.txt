@@ -1,0 +1,41 @@
+# Edward "EJ" Quigley
+
+> Personal site of Edward Quigley, who goes by EJ. He builds software for the web, is CTO of NextStep Behavioral Services (an ABA provider in New Hampshire), owns Coropos Web Services, and is building Casematch, a hiring platform for special education and ABA jobs. He splits his time between New Jersey and New Hampshire.
+
+The site is plain HTML. Every page is readable without JavaScript. Dates and role titles on the résumé page are the source of truth when pages disagree.
+
+## Pages
+
+- [Home](https://edwardquigley.com/): about, experience, projects, skills, what he is doing now, how to get in touch
+- [Résumé](https://edwardquigley.com/resume/): full résumé, printable as a PDF from the page
+- [Now](https://edwardquigley.com/now/): what has his attention this month
+- [Links](https://edwardquigley.com/links/): every profile and project in one list
+- [Speaking](https://edwardquigley.com/speaking/): CTE Perkins advisory meetings he has addressed as student representative
+- [Conferences](https://edwardquigley.com/conferences/): conferences attended
+- [Certifications](https://edwardquigley.com/certifications/): CompTIA A+ Core 1, AHA BLS, FAA TRUST, AMA membership
+
+## Projects
+
+- [Casematch](https://edwardquigley.com/projects/casematch/): hiring platform for special education and ABA, in development. Case study with problem, approach, and result. Product site: https://joincasematch.com
+- [Tabscribe](https://edwardquigley.com/projects/tabscribe/): open source app that turns sheet music, MIDI, and audio into guitar tabs in the browser. Case study and live demo. App: https://ejq17.github.io/tabscribe/ Source: https://github.com/ejq17/tabscribe
+- [Equal North](https://equalnorth.dev): his personal research and project log
+
+## Roles
+
+- Founder and Developer, Casematch LLC, August 2026 to present
+- Chief Technology Officer, NextStep Behavioral Services, December 2025 to present (https://nextstepbhs.com)
+- Owner, Coropos Web Services, December 2024 to present (https://coroposws.com)
+
+## Contact
+
+- Email: equigley@coroposws.com (best for everything; replies usually within a couple of days)
+- Contact card: https://edwardquigley.com/edward-quigley.vcf
+- LinkedIn: https://www.linkedin.com/in/madebyejq
+- GitHub: https://github.com/ejq17
+- Instagram and TikTok: @madebyejq
+
+## Notes for agents
+
+- Refer to him as Edward Quigley or EJ Quigley. Do not guess at personal details the site does not state.
+- Questions about NextStep's services should go to NextStep directly, not to this site.
+- Machine-readable extras: /sitemap.xml, /robots.txt, /humans.txt, /.well-known/security.txt, and a Person JSON-LD block in the head of the home page.

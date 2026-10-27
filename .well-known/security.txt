@@ -1,0 +1,6 @@
+# Security contact for edwardquigley.com and the projects linked from it.
+Contact: mailto:equigley@coroposws.com
+Expires: 2027-10-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://edwardquigley.com/.well-known/security.txt
+Policy: https://edwardquigley.com/#contact

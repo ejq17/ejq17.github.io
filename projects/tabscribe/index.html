@@ -29,6 +29,10 @@
 <link rel="stylesheet" href="/assets/css/project.css">
 <script src="/assets/js/site.js" defer></script>
 <script src="/assets/js/tabscribe-demo.js" defer></script>
+<!-- Cloudflare Web Analytics: privacy-friendly, no cookies, no banner needed. Enable it in the Cloudflare dashboard
+     (Analytics & Logs > Web Analytics > Add a site), then either turn on automatic injection for the Pages project, or paste
+     the site token below and remove the comment markers on every page (README.md has a one-line command). -->
+<!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "CF_WEB_ANALYTICS_TOKEN"}'></script> -->
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -57,6 +61,44 @@
       <div class="hero-actions rise">
         <a class="btn btn-primary" href="https://ejq17.github.io/tabscribe/" target="_blank" rel="noopener">Open the app<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-arrow-up-right"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
         <a class="btn btn-ghost" href="https://github.com/ejq17/tabscribe" target="_blank" rel="noopener">Source on GitHub<span class="btn-icon"><svg class="icon" aria-hidden="true"><use href="/assets/images/icons.svg#i-github"/></svg></span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section case" id="case" aria-labelledby="case-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="case-title" class="reveal">Problem, approach, result</h2></div>
+      <div class="case-rows">
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">1</span>Problem</p>
+          <div class="case-text">
+            <p>I play guitar in a jazz band, and most of what I want to learn exists as a lead sheet, a MIDI file, or a recording. Not as tab. The tab sites stop at popular songs, and the transcriptions that do exist are often wrong. I wanted to hand over whatever file I had and get a tab I could edit, without uploading my music anywhere.</p>
+          </div>
+        </div>
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">2</span>Approach</p>
+          <div class="case-text">
+            <p>Every importer produces the same score model, and everything downstream reads from it: the tab engine, chord detection, the renderer, the player, and the exporters. The tab engine picks a string and fret for each note with the least hand movement, in standard tuning or any other.</p>
+            <p>Sheet music is the hard case. The optical music recognition is my own: it binarizes the page, finds the staves, strips the lines, finds the noteheads, and maps each one to a pitch. Anything it isn't sure about shows in amber next to the original page, so you can fix it in a few clicks. To stop guessing at how good it was, I built a benchmark of 14 public-domain scores with ground truth, so every change to the recognizer gets measured.</p>
+          </div>
+        </div>
+        <div class="case-row reveal">
+          <p class="case-label"><span class="case-num" aria-hidden="true">3</span>Result</p>
+          <div class="case-text">
+            <p>One day of work against that benchmark took pitch accuracy on clean printed scores from 26% to 66%, and chord symbols on clean lead sheets now read at 97%. Degraded scans are still rough, at 25%, and that's the next thing to work on. The whole app is one static site that works offline, and your files never leave the browser.</p>
+            <div class="case-stat"><p class="case-stat-num">66%<small>up from 26%</small></p><p class="case-stat-text">Pitch accuracy (F1) on clean scans, averaged across the 14-piece benchmark.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="case-figures">
+        <figure class="shot shot-wide reveal">
+          <div class="shot-frame"><picture><source srcset="/assets/images/projects/tabscribe-scan-to-tab.webp" type="image/webp"><img src="/assets/images/projects/tabscribe-scan-to-tab.png" alt="Tabscribe showing a scanned page of Greensleeves on the right and the recognized guitar tab with chord names on the left" width="2000" height="1148" loading="lazy" decoding="async"></picture></div>
+          <figcaption>A scanned lead sheet in, tab with chord names out. The original page stays beside the tab so you can check it.</figcaption>
+        </figure>
+        <figure class="shot shot-wide reveal">
+          <div class="shot-frame"><picture><source srcset="/assets/images/projects/tabscribe-abc-to-tab.webp" type="image/webp"><img src="/assets/images/projects/tabscribe-abc-to-tab.png" alt="Tabscribe showing a short melody as guitar tab with rhythm stems, and the same melody in standard notation below it" width="2000" height="1023" loading="lazy" decoding="async"></picture></div>
+          <figcaption>The same tune from a notation file, with the standard notation view open underneath.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

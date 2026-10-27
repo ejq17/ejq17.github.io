@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Quigley;Edward;;;
+FN:Edward Quigley
+NICKNAME:EJ
+ORG:Casematch LLC
+TITLE:Founder, Casematch. CTO, NextStep Behavioral Services.
+EMAIL;TYPE=INTERNET,PREF:equigley@coroposws.com
+URL:https://edwardquigley.com/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/madebyejq
+X-SOCIALPROFILE;TYPE=github:https://github.com/ejq17
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/madebyejq/
+NOTE:Based between New Jersey and New Hampshire. Email is the best way to reach me.
+REV:2026-10-27T00:00:00Z
+END:VCARD

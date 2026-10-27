@@ -212,7 +212,7 @@
       ['Projects', '/#projects', 'Section'], ['Skills', '/#skills', 'Section'], ['Right now', '/#now', 'Section'],
       ['Off the keyboard', '/#credentials', 'Section'], ['Outside the work', '/#beyond', 'Section'], ['Get in touch', '/#contact', 'Section'],
       ['Résumé', '/resume/', 'Page'], ['Speaking', '/speaking/', 'Page'], ['Conferences', '/conferences/', 'Page'], ['Certifications', '/certifications/', 'Page'],
-      ['Now', '/now/', 'Page'], ['Links', '/links/', 'Page'], ['Tabscribe', '/projects/tabscribe/', 'Page'], ['Casematch', '/projects/casematch/', 'Page'],
+      ['Now', '/now/', 'Page'], ['Links', '/links/', 'Page'], ['Contact card (.vcf)', '/edward-quigley.vcf', 'Page'], ['Tabscribe', '/projects/tabscribe/', 'Page'], ['Casematch', '/projects/casematch/', 'Page'],
       ['GitHub', 'https://github.com/ejq17', 'External'], ['Instagram', 'https://www.instagram.com/madebyejq/', 'External'],
       ['TikTok', 'https://www.tiktok.com/@madebyejq', 'External'], ['LinkedIn', 'https://www.linkedin.com/in/madebyejq', 'External'],
       ['Casematch site', 'https://joincasematch.com', 'External'], ['Coropos', 'https://coroposws.com', 'External'],

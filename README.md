@@ -15,7 +15,11 @@ Served at https://edwardquigley.com from Cloudflare Pages. The GitHub repo `ejq1
 - `assets/css/links.css` - styles for `/links/` and `404.html`
 - `assets/js/site.js` - scroll reveal, mobile menu, accent easter egg, portrait tilt, GitHub activity strip, command palette
 - `assets/fonts/` - Inter, self-hosted as a Latin-subset woff2 in four weights (400, 500, 600, 700). No third-party font requests.
-- `assets/images/` - favicon, OG images (one per page where it matters), icon sprite (`icons.svg`)
+- `assets/images/` - favicon, OG images (one per page), icon sprite (`icons.svg`)
+- `assets/images/projects/` - case-study screenshots for the two project pages (webp plus png fallback, 2x)
+- `edward-quigley.vcf` - the downloadable contact card (vCard 3.0, CRLF line endings). Linked from Get in touch, `/links/`, the résumé, and the command palette.
+- `llms.txt` - a Markdown summary of the site for AI agents and crawlers (what is where, roles, contact). Keep it in step when pages or roles change.
+- `humans.txt` and `.well-known/security.txt` - credits and the security contact. `security.txt` has an `Expires` line (currently 2027-10-27); bump it yearly.
 - `assets/data/contributions.json` - GitHub contribution calendar, written by the nightly Action (see Home page extras)
 - `scripts/` and `.github/workflows/` - the contribution refresh
 - `robots.txt` and `sitemap.xml` - add a `<url>` to the sitemap when you add a page
@@ -35,9 +39,9 @@ All copy lives directly in the HTML files. Search for the text and edit it.
 - Projects: each is one `<article class="card project ...">` in the `#projects` section. Remove the `<a>` around the title and the `.go` span for a card with no link.
 - Links page: each row is one `<li>` in `links/index.html`.
 - Colors: change the variables in `:root` in `site.css` (the accent is `--accent`; the dark theme overrides sit in the `prefers-color-scheme: dark` block).
-- OG images: `og-image.png` (home, links, 404), `og-now.png`, `og-tabscribe.png`, `og-casematch.png`, all 1200 x 630 PNG.
+- OG images: one per page, all 1200 x 630 PNG. `og-image.png` is the home page and 404; `og-now.png`, `og-resume.png`, `og-links.png`, `og-speaking.png`, `og-conferences.png`, `og-certifications.png`, `og-tabscribe.png`, `og-casematch.png` are the rest. To remake one, render a 1200 x 630 HTML card (badge, optional chip, big Inter title, one subline on the light wash) with headless Chromium at 1x; the page-specific text lives in the `og:image:alt` of each page.
 - Dates: the résumé PDF is the source of truth for role dates (Coropos December 2024, NextStep December 2025, Casematch August 2026). The Experience cards, timeline, and résumé page all use them.
-- Contact: the email address appears in the Get in touch section and footer of `index.html`, and on `/links/`. Search for `mailto:` to change it.
+- Contact: the email address appears in the Get in touch section and footer of `index.html`, on `/links/`, on the résumé, in `edward-quigley.vcf`, `llms.txt`, `humans.txt`, and `.well-known/security.txt`. Search for `equigley@` to change it everywhere. The "best way to reach me" list is the `<dl class="reach">` in the Get in touch card.
 - The Person JSON-LD block is in the `<head>` of `index.html`.
 
 ## Deploy
@@ -64,6 +68,23 @@ Then open http://localhost:8765/ (paths are root-relative, so open it through a 
 ## Pages added in round 2
 
 - `now/index.html` - the Now page (`/now/`). Edit the five cards directly; optional extra cards (aircraft, tune, reading) are documented in an HTML comment inside the page. Update the "Last updated" line when you change it.
-- `projects/tabscribe/index.html` - Tabscribe project page with a scripted "notes in, tab out" demo (`assets/js/tabscribe-demo.js`; the melody and tuning are constants at the top) and an embed of the live app.
-- `projects/casematch/index.html` - Casematch preview page. The walkthrough in `assets/js/casematch-demo.js` uses only sample data (the sample role and the candidate defaults are constants at the top). Keep it labeled as a preview.
+- `projects/tabscribe/index.html` - Tabscribe project page. Opens with a case study (`section.case`: problem, approach, result, one stat tile, two screenshots), then a scripted "notes in, tab out" demo (`assets/js/tabscribe-demo.js`; the melody and tuning are constants at the top) and an embed of the live app.
+- `projects/casematch/index.html` - Casematch page. Opens with the same case-study layout (the stat is the unit-test count from the Casematch repo; refresh it when it moves a lot), then the walkthrough. The walkthrough in `assets/js/casematch-demo.js` uses only sample data (the sample role and the candidate defaults are constants at the top). Keep it labeled as a preview.
 - Page CSS: `assets/css/now.css`, `assets/css/project.css` (Tabscribe), `assets/css/casematch.css`.
+
+## Case studies
+
+Both project pages open with a `section.case` block: three `case-row`s (Problem, Approach, Result), a `case-stat` tile with one real number, and a `case-figures` grid of screenshots. Styles are in `site.css` under "Case study". Keep the numbers honest and dated in the prose: Tabscribe's come from `scripts/omr-bench/RESULTS-2026-10-07.md` in the Tabscribe repo (clean-scan pitch F1 26% to 66%, chords 97%, degraded 25%); Casematch's are counts from its repo (unit tests, e2e specs, edge functions) as of 2026-10-27.
+
+The screenshots are real captures: Tabscribe running a public-domain page from its own OMR benchmark corpus (Greensleeves, CC0) and a short ABC file; Casematch's marketing demo cards from a local dev build. They are light-themed, so `site.css` dims `.shot img` slightly in dark mode. Replace a screenshot by dropping a new PNG (2x) in `assets/images/projects/`, running `cwebp -q 86 in.png -o out.webp`, and updating the `width`/`height` on the `<img>`.
+
+## Analytics
+
+There is no analytics script yet. The pages carry a commented-out Cloudflare Web Analytics beacon just before `</head>` (privacy-friendly, no cookies, no banner needed). To turn it on:
+
+1. In the Cloudflare dashboard, open Analytics & Logs > Web Analytics and add `edwardquigley.com`. Copy the site token.
+2. Either enable automatic injection on the Pages project (Pages > project > Settings > Web Analytics), and leave the comment alone, or paste the token into every page in one go:
+
+       grep -rl 'CF_WEB_ANALYTICS_TOKEN' --include='*.html' . | xargs sed -i '' -e 's/<!-- <script defer src="https:\/\/static.cloudflareinsights.com/<script defer src="https:\/\/static.cloudflareinsights.com/' -e 's/CF_WEB_ANALYTICS_TOKEN"}'"'"'><\/script> -->/PASTE_TOKEN_HERE"}'"'"'><\/script>/'
+
+   then replace `PASTE_TOKEN_HERE` with the token. Do not do both, or every view counts twice.
